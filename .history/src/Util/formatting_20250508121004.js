@@ -1,0 +1,1 @@
+export const CurrencyFormatter = new Intl.NumberFormat('')

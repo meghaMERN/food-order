@@ -1,0 +1,10 @@
+export default function CartItem({ name, quantity, price }) {
+    return <li className="cart-item">
+        <p>{name} - {quantity} * {price}</p>
+        <p className="cart-item-actions">
+            <button>_</button>
+            <span></span>
+            <button></button>
+        </p>
+    </li>
+}

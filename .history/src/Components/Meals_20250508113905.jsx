@@ -1,0 +1,15 @@
+import { useState } from "react";
+
+export function Meals() {
+    const [loadedMeals, set] = useState()
+    async function fetchMeals() {
+        const response = await fetch('http://localhost:3000/meals')
+
+        if(!response.ok){
+
+        }
+
+
+    }
+    fetchMeals();
+}

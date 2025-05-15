@@ -1,0 +1,48 @@
+import { createContext } from "vm";
+import CartContext from "./CartContext";
+
+const UserProgress = createContext({
+    progress: '',
+    showCart: () => { },
+    hideCart: () => { },
+    showCheckout: () => { },
+    hideCheckout: () => { }
+});
+
+export function UserProgressContextProvider({ children }) {
+    const [userProgress, setUserProgress] = useState('');
+
+    function showCart() {
+        setUserProgress('Cart');
+    };
+
+    function hideCart() {
+        setUserProgress('');
+    };
+
+    function showCheckout() {
+        setUserProgress('checkOut');
+    };
+
+    function hideCheckout() {
+        setUserProgress('')
+    };
+
+    const userProgressCtx = {
+        progress:userProgress,
+        showCart,
+        hideCart,
+        showCheckout
+    }
+
+    return (
+        <UserProgressContext>{children}</UserProgressContext>
+    )
+}
+
+
+
+
+
+
+export default UserProgress;
