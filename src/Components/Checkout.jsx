@@ -19,7 +19,7 @@ export default function CheckOut() {
     const cartCtx = useContext(CartContext);
     const userProgressCtx = useContext(UserProgressContext);
 
-    const { data, error, sendrequest, clearData } = usehttp('http://localhost:3000/orders', requestConfig)
+    const { data, error, sendrequest, clearData } = usehttp('https://food-order-hnvr.onrender.com/orders', requestConfig)
     const cartTotal = cartCtx.items.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0);
 
     function handleClose() {
@@ -43,8 +43,9 @@ export default function CheckOut() {
         })
         )
 
+      
 
-        fetch('http://localhost:3000/orders',
+        fetch('https://food-order-hnvr.onrender.com/meals',
             {
                 method: 'POST',
                 headers: {
